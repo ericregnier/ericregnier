@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eric Regnier</title>
+  <style>
+    :root {
+      --navy-950: #091427;
+      --navy-900: #10233f;
+      --navy-700: #254670;
+      --navy-300: #a7bddb;
+      --ink: #e8effa;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(37, 70, 112, 0.2), transparent 60%),
+        radial-gradient(1000px 600px at 85% 85%, rgba(167, 189, 219, 0.1), transparent 55%),
+        linear-gradient(145deg, var(--navy-950), var(--navy-900));
+      color: var(--ink);
+      font-family: "Segoe UI", "Aptos", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .wrap {
+      width: min(92vw, 680px);
+      display: grid;
+      gap: 1rem;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .portrait {
+      width: min(70vw, 340px);
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(167, 189, 219, 0.28);
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 1px rgba(232, 239, 250, 0.05);
+      backdrop-filter: blur(2px);
+      background: rgba(9, 20, 39, 0.25);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: var(--navy-300);
+      opacity: 0.95;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" aria-label="Eric Regnier profile page">
+    <figure class="portrait" aria-label="Minimal modern portrait of EricRegnier">
+      <svg viewBox="0 0 600 600" width="100%" height="100%" role="img" aria-label="Stylized professional portrait">
+        <defs>
+          <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#10233f" />
+            <stop offset="100%" stop-color="#0b1a31" />
+          </linearGradient>
+          <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a7bddb" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#4f6f98" stop-opacity="0.15" />
+          </linearGradient>
+        </defs>
+
+        <rect x="0" y="0" width="600" height="600" fill="url(#bgGrad)" />
+        <circle cx="470" cy="120" r="130" fill="url(#accentGrad)" />
+        <circle cx="300" cy="255" r="118" fill="#c9d9ed" fill-opacity="0.95" />
+        <path d="M108 520c16-95 94-165 192-165s176 70 192 165" fill="#e8effa" fill-opacity="0.92" />
+
+        <rect x="95" y="80" width="410" height="440" rx="200" ry="200" fill="none" stroke="#a7bddb" stroke-opacity="0.3" stroke-width="2" />
+
+        <text x="300" y="565" text-anchor="middle" fill="#a7bddb" font-size="34" font-family="Segoe UI, Tahoma, sans-serif" letter-spacing="2">ERIC REGNIER</text>
+      </svg>
+    </figure>
+
+    <p class="copyright">Copyright &copy; <span id="year"></span> EricRegnier.com</p>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>
