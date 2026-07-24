@@ -58,6 +58,50 @@
       color: var(--navy-300);
       opacity: 0.95;
     }
+
+    .profile-link {
+      width: 2.15rem;
+      height: 2.15rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy-900);
+      background: rgba(232, 239, 250, 0.96);
+      text-decoration: none;
+      border: 1px solid rgba(167, 189, 219, 0.62);
+      border-radius: 8px;
+      padding: 0.12rem;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+      transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+
+    .profile-link:hover,
+    .profile-link:focus-visible {
+      color: var(--ink);
+      background: transparent;
+      border-color: var(--ink);
+      outline: none;
+    }
+
+    .profile-link svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      display: block;
+    }
+
+    .name-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .name-label {
+      color: var(--navy-300);
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
   </style>
 </head>
 <body>
@@ -73,20 +117,35 @@
             <stop offset="0%" stop-color="#a7bddb" stop-opacity="0.75" />
             <stop offset="100%" stop-color="#4f6f98" stop-opacity="0.15" />
           </linearGradient>
+          <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffbf63" />
+            <stop offset="100%" stop-color="#f3a84c" />
+          </linearGradient>
         </defs>
 
         <rect x="0" y="0" width="600" height="600" fill="url(#bgGrad)" />
         <circle cx="470" cy="120" r="130" fill="url(#accentGrad)" />
         <circle cx="300" cy="255" r="118" fill="#c9d9ed" fill-opacity="0.95" />
+        <path d="M180 226c2-60 53-95 122-95 77 0 128 39 133 95 1 9-6 15-14 15H194c-8 0-15-6-14-15z" fill="url(#capGrad)" />
+        <path d="M422 210h98c9 0 16 7 16 15s-7 15-16 15h-98z" fill="#e58d3d" />
+        <path d="M237 207c0-27 21-48 48-48 27 0 48 21 48 48v5h-96z" fill="#4a2140" />
+        <rect x="237" y="207" width="96" height="11" rx="5.5" fill="#ff7459" />
         <path d="M108 520c16-95 94-165 192-165s176 70 192 165" fill="#e8effa" fill-opacity="0.92" />
 
         <rect x="95" y="80" width="410" height="440" rx="200" ry="200" fill="none" stroke="#a7bddb" stroke-opacity="0.3" stroke-width="2" />
-
-        <text x="300" y="565" text-anchor="middle" fill="#a7bddb" font-size="34" font-family="Segoe UI, Tahoma, sans-serif" letter-spacing="2">ERIC REGNIER</text>
       </svg>
     </figure>
 
-    <p class="copyright">Copyright &copy; <span id="year"></span> EricRegnier.com</p>
+    <div class="name-row" aria-label="Eric Regnier name and LinkedIn profile link">
+      <span class="name-label">Eric Regnier</span>
+      <a class="profile-link" href="https://www.linkedin.com/in/regnier/" target="_blank" rel="noopener noreferrer" aria-label="Eric Regnier LinkedIn profile">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" fill="currentColor">
+          <path d="M5.2 3.5A1.7 1.7 0 1 1 5.2 6.9A1.7 1.7 0 0 1 5.2 3.5zM3.7 8.2h3v12.3h-3zM11.5 8.2h2.9v1.7h.1c.4-.8 1.4-1.9 3.2-1.9 3.4 0 4 2.1 4 4.9v7.6h-3v-6.8c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5v6.9h-3z" />
+        </svg>
+      </a>
+    </div>
+
+    <p class="copyright">Copyright &copy; <span id="year"></span></p>
   </main>
 
   <script>
