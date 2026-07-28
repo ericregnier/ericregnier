@@ -52,6 +52,14 @@
       background: rgba(9, 20, 39, 0.25);
     }
 
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+    }
+
     .copyright {
       font-size: 0.9rem;
       letter-spacing: 0.04em;
@@ -107,33 +115,7 @@
 <body>
   <main class="wrap" aria-label="Eric Regnier profile page">
     <figure class="portrait" aria-label="Minimal modern portrait of EricRegnier">
-      <svg viewBox="0 0 600 600" width="100%" height="100%" role="img" aria-label="Stylized professional portrait">
-        <defs>
-          <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#10233f" />
-            <stop offset="100%" stop-color="#0b1a31" />
-          </linearGradient>
-          <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#a7bddb" stop-opacity="0.75" />
-            <stop offset="100%" stop-color="#4f6f98" stop-opacity="0.15" />
-          </linearGradient>
-          <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#ffbf63" />
-            <stop offset="100%" stop-color="#f3a84c" />
-          </linearGradient>
-        </defs>
-
-        <rect x="0" y="0" width="600" height="600" fill="url(#bgGrad)" />
-        <circle cx="470" cy="120" r="130" fill="url(#accentGrad)" />
-        <circle cx="300" cy="255" r="118" fill="#c9d9ed" fill-opacity="0.95" />
-        <path d="M180 226c2-60 53-95 122-95 77 0 128 39 133 95 1 9-6 15-14 15H194c-8 0-15-6-14-15z" fill="url(#capGrad)" />
-        <path d="M422 210h98c9 0 16 7 16 15s-7 15-16 15h-98z" fill="#e58d3d" />
-        <path d="M237 207c0-27 21-48 48-48 27 0 48 21 48 48v5h-96z" fill="#4a2140" />
-        <rect x="237" y="207" width="96" height="11" rx="5.5" fill="#ff7459" />
-        <path d="M108 520c16-95 94-165 192-165s176 70 192 165" fill="#e8effa" fill-opacity="0.92" />
-
-        <rect x="95" y="80" width="410" height="440" rx="200" ry="200" fill="none" stroke="#a7bddb" stroke-opacity="0.3" stroke-width="2" />
-      </svg>
+      <img src="eric_avatar.jpg" alt="Eric Regnier portrait" />
     </figure>
 
     <div class="name-row" aria-label="Eric Regnier name and LinkedIn profile link">
